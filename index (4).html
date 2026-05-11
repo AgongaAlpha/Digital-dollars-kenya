@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Digital Dollars — The Kenyan's AI Playbook</title>
+<meta name="description" content="The Kenyan's AI Playbook for Consistent Online Income. Six proven income streams, built for Kenya."/>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+<!-- Meta Pixel — replace PIXEL_ID with your actual pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<style>
+/* =============================================
+   TOKENS & RESET
+   ============================================= */
+:root {
+  --bg:        #020410;
+  --surface:   #080c1e;
+  --card:      #0d1230;
+  --border:    rgba(100,120,255,0.15);
+
+  --accent1:   #4f6eff;   /* electric blue */
+  --accent2:   #00e5c3;   /* cyan-mint */
+  --accent3:   #ff4fd8;   /* hot pink */
+  --accent4:   #ffce4f;   /* gold */
+
+  --text:      #f0f4ff;
+  --muted:     #8b93b8;
+
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --glow1: 0 0 40px rgba(79,110,255,0.45), 0 0 80px rgba(79,110,255,0.2);
+  --glow2: 0 0 40px rgba(0,229,195,0.4),  0 0 80px rgba(0,229,195,0.15);
+  --glow3: 0 0 40px rgba(255,79,216,0.4), 0 0 80px rgba(255,79,216,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =============================================
+   ANIMATED BACKGROUND MESH
+   ============================================= */
+.bg-mesh {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(79,110,255,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 80%, rgba(0,229,195,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 60% 10%, rgba(255,79,216,0.07) 0%, transparent 70%);
+  animation: meshShift 12s ease-in-out infinite alternate;
+}
+@keyframes meshShift {
+  0%   { opacity: 1; transform: scale(1) rotate(0deg); }
+  100% { opacity: 0.7; transform: scale(1.08) rotate(2deg); }
+}
+
+.grid-overlay {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(79,110,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,110,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* =============================================
+   LAYOUT WRAPPER
+   ============================================= */
+.page { position: relative; z-index: 1; }
+
+section { width: 100%; }
+
+.inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =============================================
+   TOP BAR
+   ============================================= */
+.topbar {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  background: rgba(2,4,16,0.8);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar-logo {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+.topbar-logo span { color: var(--accent2); }
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  border: 1px solid rgba(0,229,195,0.3);
+  border-radius: 40px;
+  padding: 5px 16px;
+  margin-bottom: 28px;
+  background: rgba(0,229,195,0.06);
+}
+
+.hero-hook {
+  font-family: var(--font-head);
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero-hook .highlight-blue  { color: var(--accent1); text-shadow: var(--glow1); }
+.hero-hook .highlight-cyan  { color: var(--accent2); text-shadow: var(--glow2); }
+.hero-hook .highlight-pink  { color: var(--accent3); text-shadow: var(--glow3); }
+.hero-hook .highlight-gold  { color: var(--accent4); }
+
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 19px);
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 auto 40px;
+  line-height: 1.65;
+}
+
+/* =============================================
+   PROBLEM BLOCK
+   ============================================= */
+.problem-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  margin: 0 auto 60px;
+  max-width: 680px;
+  position: relative;
+  overflow: hidden;
+}
+.problem-block::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+}
+.problem-title {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent3);
+  margin-bottom: 14px;
+}
+.problem-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #c8d0f0;
+}
+
+/* =============================================
+   SOLUTION SECTION
+   ============================================= */
+.solution {
+  padding: 20px 20px 60px;
+}
+.section-label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent1);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+.section-sub {
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+/* persona-specific solution card */
+.solution-card {
+  background: linear-gradient(135deg, rgba(79,110,255,0.08), rgba(0,229,195,0.04));
+  border: 1px solid rgba(79,110,255,0.25);
+  border-radius: 20px;
+  padding: 36px 32px;
+  max-width: 680px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+.solution-card .income-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,229,195,0.1);
+  border: 1px solid rgba(0,229,195,0.3);
+  border-radius: 40px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-bottom: 20px;
+}
+.solution-card h3 {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.solution-card p {
+  font-size: 15px;
+  color: #b8c2e8;
+  line-height: 1.7;
+}
+
+/* bullets */
+.proof-list {
+  list-style: none;
+  margin: 22px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.proof-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #c8d0f0;
+  line-height: 1.5;
+}
+.proof-list li::before {
+  content: '✦';
+  color: var(--accent2);
+  font-size: 12px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* =============================================
+   WHAT'S INSIDE (other streams teaser)
+   ============================================= */
+.inside {
+  padding: 60px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.streams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.stream-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.stream-chip:hover {
+  border-color: rgba(79,110,255,0.4);
+  transform: translateY(-2px);
+}
+.stream-chip .chip-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+.stream-chip .chip-name {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.stream-chip .chip-earn {
+  font-size: 12px;
+  color: var(--accent2);
+  font-weight: 600;
+}
+.stream-chip.active-stream {
+  border-color: var(--accent1);
+  background: rgba(79,110,255,0.1);
+  box-shadow: var(--glow1);
+}
+.stream-chip.active-stream .chip-name { color: var(--accent1); }
+
+/* =============================================
+   EBOOK FEATURE BLOCK
+   ============================================= */
+.ebook-block {
+  padding: 70px 20px;
+}
+.ebook-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 560px) {
+  .ebook-inner { grid-template-columns: 1fr; text-align: center; }
+  .ebook-cover { margin: 0 auto; }
+}
+
+.ebook-cover {
+  width: 160px;
+  height: 210px;
+  background: linear-gradient(135deg, #0d1a5e, #1a3080);
+  border-radius: 10px;
+  border: 1px solid rgba(79,110,255,0.4);
+  box-shadow: var(--glow1), -8px 8px 0 rgba(0,229,195,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 14px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.ebook-cover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+.cover-title {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.cover-sub {
+  font-size: 8.5px;
+  color: var(--accent2);
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.cover-icon { font-size: 28px; margin-bottom: 10px; }
+
+.ebook-info h3 {
+  font-family: var(--font-head);
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.ebook-info p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.ebook-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.meta-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent4);
+  background: rgba(255,206,79,0.1);
+  border: 1px solid rgba(255,206,79,0.25);
+  border-radius: 40px;
+  padding: 4px 12px;
+}
+
+/* =============================================
+   CTA SECTION
+   ============================================= */
+.cta-section {
+  padding: 80px 20px 100px;
+  text-align: center;
+}
+.cta-pre {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.cta-headline {
+  font-family: var(--font-head);
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+.cta-sub {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* THE BUTTON */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 20px 48px;
+  border-radius: 60px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 30px rgba(79,110,255,0.6),
+    0 0 60px rgba(79,110,255,0.3),
+    0 0 100px rgba(0,229,195,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: transform 0.15s, box-shadow 0.15s;
+  animation: btnPulse 2.5s ease-in-out infinite;
+}
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -60%;
+  width: 40%; height: 200%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%   { left: -60%; }
+  100% { left: 140%; }
+}
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(79,110,255,0.6), 0 0 60px rgba(79,110,255,0.3), 0 0 100px rgba(0,229,195,0.2), inset 0 1px 0 rgba(255,255,255,0.2); }
+  50%       { box-shadow: 0 0 50px rgba(79,110,255,0.8), 0 0 100px rgba(79,110,255,0.4), 0 0 140px rgba(0,229,195,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
+}
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+.cta-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.cta-arrow { font-size: 20px; transition: transform 0.2s; }
+.cta-btn:hover .cta-arrow { transform: translateX(4px); }
+
+.cta-trust {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.cta-trust span { color: var(--accent2); }
+
+/* secondary CTA */
+.cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  background: transparent;
+  border: 1px solid rgba(255,79,216,0.4);
+  color: var(--accent3);
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,79,216,0.2);
+  transition: all 0.2s;
+}
+.cta-btn-secondary:hover {
+  background: rgba(255,79,216,0.08);
+  box-shadow: var(--glow3);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   URGENCY BAR
+   ============================================= */
+.urgency-bar {
+  background: linear-gradient(90deg, rgba(255,79,216,0.12), rgba(79,110,255,0.12));
+  border: 1px solid rgba(255,79,216,0.2);
+  border-radius: 12px;
+  padding: 16px 24px;
+  max-width: 560px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #d0d8ff;
+  line-height: 1.5;
+}
+.urgency-bar strong { color: var(--accent3); }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =============================================
+   ANIMATIONS ON LOAD
+   ============================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.35s; }
+.delay-4 { animation-delay: 0.5s; }
+.delay-5 { animation-delay: 0.65s; }
+
+/* =============================================
+   MOBILE
+   ============================================= */
+@media (max-width: 600px) {
+  .hero { padding: 60px 20px 40px; }
+  .problem-block { padding: 28px 20px; }
+  .solution-card { padding: 28px 20px; }
+  .cta-btn { font-size: 16px; padding: 18px 32px; }
+  .streams-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<div class="grid-overlay"></div>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <nav class="topbar">
+    <div class="topbar-logo">DIGITAL DOLLARS <span>KENYA</span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner">
+      <div class="hero-eyebrow fade-up" id="eyebrow">For Kenyan Digital Hustlers</div>
+      <h1 class="hero-hook fade-up delay-1" id="hero-hook">Loading...</h1>
+      <p class="hero-sub fade-up delay-2" id="hero-sub">Loading...</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM BLOCK -->
+  <section style="padding: 0 20px;">
+    <div class="problem-block fade-up delay-3" id="problem-block">
+      <div class="problem-title">The Real Problem</div>
+      <p class="problem-text" id="problem-text">Loading...</p>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <div class="inner">
+      <div class="section-label fade-up">The Solution</div>
+      <h2 class="section-title fade-up delay-1" id="solution-title">Loading...</h2>
+      <p class="section-sub fade-up delay-2" id="solution-sub">Loading...</p>
+
+      <div class="solution-card fade-up delay-3">
+        <div class="income-badge" id="income-badge">
+          <span>💰</span><span id="income-range">Loading...</span>
+        </div>
+        <h3 id="solution-card-title">Loading...</h3>
+        <p id="solution-card-body">Loading...</p>
+        <ul class="proof-list" id="proof-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="inside">
+    <div class="inner">
+      <div class="section-label fade-up">What's Inside the Playbook</div>
+      <h2 class="section-title fade-up delay-1">Six Income Streams.<br/>You Pick One.</h2>
+      <p class="section-sub fade-up delay-2">The ebook covers all six methods in full detail. Your focus stream is highlighted — but every chapter is yours.</p>
+      <div class="streams-grid fade-up delay-3" id="streams-grid"></div>
+    </div>
+  </section>
+
+  <!-- EBOOK FEATURE -->
+  <section class="ebook-block">
+    <div class="ebook-inner fade-up">
+      <div class="ebook-cover">
+        <span class="cover-icon">📖</span>
+        <div class="cover-title">DIGITAL DOLLARS</div>
+        <div class="cover-sub">The Kenyan's AI Playbook for Consistent Online Income</div>
+      </div>
+      <div class="ebook-info">
+        <h3>One Ebook. Six Income Streams. Built for Kenya.</h3>
+        <p>A technical operations manual — not a motivational guide. Every chapter covers entry strategy, daily workflow, AI tools, income scaling, and risk warnings. No filler. No theory without application.</p>
+        <div class="ebook-meta">
+          <span class="meta-tag">M-Pesa Ready</span>
+          <span class="meta-tag">Instant Download</span>
+          <span class="meta-tag">28 Pages</span>
+          <span class="meta-tag">6 Income Streams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="inner">
+      <p class="cta-pre fade-up">Ready to start?</p>
+      <h2 class="cta-headline fade-up delay-1" id="cta-headline">Loading...</h2>
+      <p class="cta-sub fade-up delay-2" id="cta-sub">Loading...</p>
+
+      <div class="urgency-bar fade-up delay-3">
+        <strong>⚡ One-time purchase.</strong> Instant download. Kenyan market — built for M-Pesa infrastructure and local platforms.
+      </div>
+
+      <div class="fade-up delay-4">
+        <a
+          href="https://cashflowwithai.hustlesasa.shop/products/69ea647c3fa43362a15ce4d2"
+          class="cta-btn"
+          id="main-cta"
+          onclick="trackCTA()"
+          target="_blank"
+          rel="noopener"
+        >
+          <span id="cta-btn-text">Get the Ebook Now</span>
+          <span class="cta-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="cta-trust fade-up delay-5">
+        <span>✦</span> Pay with M-Pesa · Instant Download · No Subscription
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Digital Dollars Kenya · <a href="mailto:kenyanguide19@gmail.com" style="color:var(--accent2);text-decoration:none;">kenyanguide19@gmail.com</a></p>
+  </footer>
+
+</div><!-- end .page -->
+
+<script>
+/* =============================================
+   PERSONA DATA — maps to all 12 ICPs
+   URL param: ?persona=01 through ?persona=12
+   Also accepts stream names as fallback:
+   ?persona=ai_training, academic_writing, etc.
+   ============================================= */
+const PERSONAS = {
+  "01": {
+    eyebrow: "For Kenyan Graduates",
+    hook: "You Have a Degree.<br/>You Don't Have a Job.<br/><span class='highlight-cyan'>That Changes Today.</span>",
+    sub: "Global AI companies are paying Kenyans $8–$25/hr to train AI models — no experience required. This ebook teaches you the exact system.",
+    problem: "You did everything right. You studied, you graduated — and you're still sending CVs into the void. The job market isn't broken. Your strategy is. The opportunity isn't in corporate Kenya. It's online, and it's already paying graduates like you serious money.",
+    solutionTitle: "The AI Training System — Built for Kenyan Beginners",
+    solutionSub: "Learn the exact platforms, daily workflow, and application strategy Kenyan workers use to earn consistently from home.",
+    incomeRange: "KES 30,000 – KES 120,000/month",
+    cardTitle: "AI Training: The Scalable Gig",
+    cardBody: "AI Training means rating AI responses, writing instruction pairs, and solving tasks for global AI companies — remotely, on your schedule. The ebook shows you which platforms accept Kenyans, how to pass qualification tests, and how to build a daily system that earns KES 2,000–4,000 per day.",
+    bullets: [
+      "Which platforms are accepting Kenyan workers right now",
+      "Step-by-step application strategy with test tips from the community",
+      "Daily workflow system: 5 focused hours = KES 3,000+",
+      "How to scale from solo to managing multiple accounts"
+    ],
+    activeStream: "AI Training",
+    ctaHeadline: "Your Degree Got You Here. The Ebook Gets You Earning.",
+    ctaSub: "One-time purchase. Instant download. Start within 24 hours.",
+    ctaBtn: "Get the Ebook — Start This Week"
+  },
+  "02": {
+    eyebrow: "For Kenya's 9-to-5 Warriors",
+    hook: "You Work All Day.<br/>You Hustle All Night.<br/><span class='highlight-blue'>For This Rate?</span>",
+    sub: "Academic writers on Writerbay earn up to KES 7,800 for a single paper. Five papers a week is KES 39,000 — done from your phone, after hours.",
+    problem: "You're already working harder than most. Your employer gets 8 hours. Your family gets whatever's left. And your side gigs are random — some weeks okay, some weeks nothing. You don't need more hustle. You need a system that pays consistently for the skills you already have.",
+    solutionTitle: "Academic Writing — The Precision Trade",
+    solutionSub: "If you can write clear, researched English, there is a global market paying you well for it. The ebook shows you how to access it.",
+    incomeRange: "KES 40,000 – KES 150,000/month",
+    cardTitle: "Writerbay and Beyond — Your After-Hours Income Engine",
+    cardBody: "Academic writing platforms like Writerbay accept Kenyan writers and pay via Payoneer — directly accessible via your bank and M-Pesa. The ebook covers the full application process, how to pass qualification tests, research workflow, and how to build repeat clients who pay you before you even start writing.",
+    bullets: [
+      "Platform application process including Writerbay grammar test prep",
+      "How to specialize in nursing, law, or business for 40-60% higher rates",
+      "Research workflow that produces quality papers in half the time",
+      "How to build repeat clients for stable predictable income"
+    ],
+    activeStream: "Academic Writing",
+    ctaHeadline: "Your Writing Skills Are Worth More Than You're Being Paid.",
+    ctaSub: "One purchase. A system that earns after your day job ends.",
+    ctaBtn: "Get the Ebook — Earn After Hours"
+  },
+  "03": {
+    eyebrow: "For Kenyan Content Creators",
+    hook: "You Write Their Captions.<br/>You Build Their Brands.<br/><span class='highlight-pink'>For Free?</span>",
+    sub: "Copywriters who position correctly charge $200–$1,500 per project. The difference between a writer and a copywriter is one thing — positioning. This ebook teaches it.",
+    problem: "You post daily. You create content that gets engagement. Brands love your work — enough to take it, remix it, build their business on it. But you're not charging what the work is worth because you're calling yourself a writer when you should be calling yourself a copywriter.",
+    solutionTitle: "Copywriting — The Client Acquisition Playbook",
+    solutionSub: "The ebook teaches you to position, price, pitch, and close copywriting clients at rates that change your monthly income.",
+    incomeRange: "KES 50,000 – KES 250,000+/month",
+    cardTitle: "From Caption Writer to Conversion Copywriter",
+    cardBody: "Copywriting is writing that sells — email sequences, sales pages, ad copy, product descriptions. Every brand generating revenue needs it. The ebook teaches you to package your services, pitch directly to clients via DMs and cold email, and charge project rates of $200–$1,500 — not hourly rates that leave money on the table.",
+    bullets: [
+      "How to position yourself as a specialist (not a generalist) and charge 3-5x more",
+      "DM and cold email outreach templates that generate 1-2 leads per day",
+      "Service packages priced correctly for the Kenyan-to-global market",
+      "How to subcontract and move from freelancer to agency"
+    ],
+    activeStream: "Copywriting",
+    ctaHeadline: "Stop Writing for Free. Start Getting Paid What You're Worth.",
+    ctaSub: "One ebook. The full client acquisition system.",
+    ctaBtn: "Get the Ebook — Start Charging Right"
+  },
+  "04": {
+    eyebrow: "For Nairobi's Crypto Curious",
+    hook: "You've Heard About Crypto.<br/>You Haven't Touched It.<br/><span class='highlight-gold'>Here's the Safe Entry.</span>",
+    sub: "P2P trading on Binance with M-Pesa is a legal, low-risk spread strategy — not speculation. This ebook covers the exact setup.",
+    problem: "You've watched people talk about crypto for years. You've seen the wins. You've also seen the losses — people who gambled on coins and lost everything. That's not what this is. P2P trading is arbitrage: buy USDT low, sell slightly higher, pocket the spread. It's closer to currency exchange than investing. But you need the right system to do it safely.",
+    solutionTitle: "P2P Crypto Trading — The Capital Strategy",
+    solutionSub: "The ebook walks you through the full Binance P2P + M-Pesa system — from first trade to scaling income consistently.",
+    incomeRange: "KES 15,000 – KES 80,000+/month",
+    cardTitle: "Binance P2P + M-Pesa: The Kenyan Trader's Setup",
+    cardBody: "You buy USDT from sellers at slightly below market rate using M-Pesa. You sell at slightly above. The spread is your profit. On KES 30,000 of working capital with disciplined spread targeting, Kenyan traders are hitting KES 50,000–80,000/month. The ebook includes account setup, scam prevention checklist, merchant selection criteria, and a scaling plan.",
+    bullets: [
+      "Step-by-step Binance KYC and M-Pesa setup for Kenyan accounts",
+      "How to identify trustworthy merchants and avoid scams",
+      "The spread strategy: realistic targets by capital level",
+      "Scam-prevention checklist built from real Kenyan market experience"
+    ],
+    activeStream: "P2P Crypto",
+    ctaHeadline: "The Safe Way In. The Right System. Built for Kenya.",
+    ctaSub: "One ebook. The full P2P setup — from KES 10,000 starting capital.",
+    ctaBtn: "Get the Ebook — Start Trading Safely"
+  },
+  "05": {
+    eyebrow: "For Kenya's WhatsApp Sellers",
+    hook: "You're Already Selling.<br/>But Every Month<br/><span class='highlight-cyan'>Is a Gamble.</span>",
+    sub: "A structured dropshipping system — Eastleigh sourcing, WhatsApp sales, Sendy delivery — can generate KES 20,000–120,000/month without holding bulk stock.",
+    problem: "You know how to sell. You've been doing it. The problem isn't product knowledge or customer skills — it's the system. Or the lack of one. Your income is inconsistent because your supplier relationship is informal, your pricing is guesswork, and your marketing is manual. A system fixes all three.",
+    solutionTitle: "Local Dropshipping — The Commerce Engine",
+    solutionSub: "The ebook teaches the full Kenyan dropshipping system: sourcing, pricing formula, AI-powered marketing, and last-mile delivery.",
+    incomeRange: "KES 20,000 – KES 120,000/month",
+    cardTitle: "Eastleigh to Customer — Without Holding Stock",
+    cardBody: "Kenyan dropshipping means sourcing from Eastleigh, Gikomba, or Muthurwa — selling via Instagram and WhatsApp — and fulfilling via Sendy, G4S, or Fargo. You only purchase stock after you've already made the sale. The ebook covers supplier negotiation, exact pricing formulas, delivery logistics, and how to use AI tools for content and ads.",
+    bullets: [
+      "Best Nairobi wholesale markets and how to negotiate supplier terms",
+      "Pricing formula: Supplier Cost × 2.5–3.5 + delivery + buffer",
+      "WhatsApp broadcast strategy for repeat buyers",
+      "AI-powered marketing using Claude and Canva — no design skills needed"
+    ],
+    activeStream: "Dropshipping",
+    ctaHeadline: "Turn Your WhatsApp Into a System. Not a Gamble.",
+    ctaSub: "One ebook. The supplier list, pricing formula, and marketing system.",
+    ctaBtn: "Get the Ebook — Build Your System"
+  },
+  "06": {
+    eyebrow: "For Kenya's Educated Job Seekers",
+    hook: "Your Degree is Sitting There.<br/>Collecting Dust.<br/><span class='highlight-pink'>Your Knowledge Pays More Online.</span>",
+    sub: "Nursing, psychology, and education specialists earn 40–60% more on academic writing platforms. Your degree is the asset — the ebook shows you how to activate it.",
+    problem: "You studied for years. You know your subject better than most. But the job market doesn't have space for everyone — and waiting for an employer to recognize your value is a losing strategy. Your academic knowledge is worth money to a global market right now. You're just not in the room where those transactions happen. Yet.",
+    solutionTitle: "Academic Writing — Your Degree Earns Online",
+    solutionSub: "The ebook covers the full path from application to consistent income on academic writing platforms that pay Kenyan specialists well.",
+    incomeRange: "KES 40,000 – KES 150,000/month",
+    cardTitle: "Specialized Knowledge = Premium Rates",
+    cardBody: "Platforms like Writerbay assign higher per-page rates to writers with domain specialization in nursing, law, psychology, and business. The ebook shows you how to apply with your strongest subject, pass qualification tests, and build a client base that returns to you specifically because of your expertise.",
+    bullets: [
+      "How to apply to Writerbay with your degree subject as your advantage",
+      "Nursing, psychology, and law: the highest-paying niches explained",
+      "How specialists earn KES 7,800+ per paper vs KES 3,500 for generalists",
+      "Building repeat clients who book you before the order queue opens"
+    ],
+    activeStream: "Academic Writing",
+    ctaHeadline: "Your Degree Has Value. The Ebook Shows You Where.",
+    ctaSub: "One purchase. The full academic writing system built for Kenyans.",
+    ctaBtn: "Get the Ebook — Activate Your Knowledge"
+  },
+  "07": {
+    eyebrow: "For Kenya's Customer Service Pros",
+    hook: "Same Skills.<br/>Different Platform.<br/><span class='highlight-cyan'>Completely Different Income.</span>",
+    sub: "Chat operations for global brands pays $3–$8/hr equivalent — no commute, flexible hours. Your existing skills are exactly what's needed.",
+    problem: "You handle difficult customers daily. You de-escalate. You follow scripts. You hit response targets. And at the end of every month, your salary reflects none of the real value you add. The skills you use every day in that call centre are in demand globally — by brands, creators, and agencies who will pay you properly for them, from anywhere.",
+    solutionTitle: "Chat Operations — The Engagement Model",
+    solutionSub: "The ebook teaches the platforms, the psychology, the ethics, and the agency model that turns chat ops into serious Kenyan income.",
+    incomeRange: "KES 25,000 – KES 100,000+/month",
+    cardTitle: "Your Customer Service Skills Are Worth More Online",
+    cardBody: "Chat operations covers customer support for global brands, social media management, and creator platform engagement. The ebook covers where to find these roles, how to get access, and how to build a managed operation where you're running a team of operators — not handling every conversation yourself.",
+    bullets: [
+      "Platforms hiring Kenyan chat operators and how to get in",
+      "Brand voice matching and response speed — the two metrics that matter",
+      "Social media management: KES 15,000–40,000/month per client",
+      "The agency model: manage 5 operators, earn on the margin"
+    ],
+    activeStream: "Chat Ops",
+    ctaHeadline: "Take Your Skills Home. And Get Paid More for Them.",
+    ctaSub: "One ebook. The full chat ops system — solo to agency.",
+    ctaBtn: "Get the Ebook — Work From Home"
+  },
+  "08": {
+    eyebrow: "For Kenyan University Students",
+    hook: "Campus WiFi.<br/>3 Hours a Day.<br/><span class='highlight-blue'>KES 4,000 — Every Day.</span>",
+    sub: "AI training platforms pay by task — not by hour. Focused 3-hour daily blocks earn KES 2,000–4,000/day around your lecture schedule.",
+    problem: "Your allowance doesn't stretch. Your parents are already giving what they can. And most online income advice assumes you have a laptop, capital, and free time all day. The AI training system works around your schedule — you set the hours, you control the income, and you don't need experience to start.",
+    solutionTitle: "AI Training — The Student-Friendly Income System",
+    solutionSub: "Task-based pay means you earn as much as you produce. No minimum hours. No boss. Just output and income.",
+    incomeRange: "KES 20,000 – KES 80,000/month",
+    cardTitle: "AI Training Fits Around Your Lectures",
+    cardBody: "Platforms like Outlier AI and Remotasks pay per task completed — so three focused hours between lectures can earn you KES 2,000–4,000. The ebook includes the full application strategy for student profiles, test-passing tips shared by Kenyan AI worker communities, and a daily schedule system that fits around academic commitments.",
+    bullets: [
+      "Which platforms accept Kenyan students and how to apply correctly",
+      "Test-passing tips from the Kenyan AI worker WhatsApp communities",
+      "A daily 3-hour production schedule designed for campus life",
+      "How to scale income during holidays and semester breaks"
+    ],
+    activeStream: "AI Training",
+    ctaHeadline: "Your Lectures End. Your Income Doesn't Have To.",
+    ctaSub: "One ebook. The AI training system that works around campus.",
+    ctaBtn: "Get the Ebook — Start Between Lectures"
+  },
+  "09": {
+    eyebrow: "For Frustrated Freelancers",
+    hook: "50 Proposals.<br/>Zero Replies.<br/><span class='highlight-gold'>It's Not Upwork. It's Your Positioning.</span>",
+    sub: "Without a Job Success Score, you're invisible to clients. But there's a positioning fix — and a direct outreach system that bypasses the algorithm entirely.",
+    problem: "You've done everything they told you to. Professional photo. Complete profile. Good proposals. And nothing. The problem isn't Upwork. The problem isn't Kenya. The problem is that 'freelance writer' is one of thousands of identical profiles. 'Email copywriter for ecommerce brands' gets shortlisted. The fix is in how you show up — and this ebook has the full playbook.",
+    solutionTitle: "Copywriting — The Client Acquisition System",
+    solutionSub: "The ebook teaches positioning, offer packaging, and direct outreach — so you don't need Upwork's algorithm to win clients.",
+    incomeRange: "KES 50,000 – KES 250,000+/month",
+    cardTitle: "Stop Waiting for Upwork. Start Getting Direct Clients.",
+    cardBody: "The ebook covers the positioning fix that separates winning copywriters from invisible writers, a direct DM and cold email outreach system that generates 1–2 leads per day, and a full offer packaging guide so clients know exactly what they're buying — and why your price is justified.",
+    bullets: [
+      "The exact positioning formula: niche + deliverable + outcome",
+      "DM outreach message structure that gets 5-10% response rates",
+      "Cold email template under 100 words that lands real clients",
+      "How to price per project — not per hour — and close faster"
+    ],
+    activeStream: "Copywriting",
+    ctaHeadline: "The Algorithm Isn't Your Only Option. The Ebook Shows You the Rest.",
+    ctaSub: "One purchase. Positioning fix + full outreach system.",
+    ctaBtn: "Get the Ebook — Fix Your Positioning"
+  },
+  "10": {
+    eyebrow: "For Kenya's Small Business Owners",
+    hook: "Your Business Has a Ceiling.<br/>It's the Size<br/><span class='highlight-cyan'>of Your Stall.</span>",
+    sub: "Online dropshipping removes the physical limit. Sell to all of Kenya — without expanding your stock or your stall.",
+    problem: "Location limits you. Stock limits you. The number of customers who walk past your stall limits you. None of those limits exist online. With a WhatsApp broadcast list, an Instagram page, and a Sendy account, your potential customer base is all of Kenya. And you only buy stock after you've already been paid for it.",
+    solutionTitle: "Local Dropshipping — Scale Without the Stall",
+    solutionSub: "The ebook teaches the full Kenyan dropshipping system — from Eastleigh sourcing to WhatsApp marketing to last-mile delivery.",
+    incomeRange: "KES 20,000 – KES 120,000/month",
+    cardTitle: "From Your Phone to All of Kenya",
+    cardBody: "Local dropshipping means you take orders on WhatsApp, source from Eastleigh only after the order is confirmed, and deliver via Sendy or G4S. Zero stock risk. The ebook covers supplier negotiation, exact pricing formulas, building a broadcast list of 100–500 buyers, and using AI for content without needing design skills.",
+    bullets: [
+      "Best Nairobi wholesale contacts: Eastleigh, Gikomba, Muthurwa",
+      "Cash on delivery setup — increases order completion by 40%",
+      "WhatsApp broadcast strategy: 3-5 messages/week that convert",
+      "AI-powered product marketing using free tools like Canva and Claude"
+    ],
+    activeStream: "Dropshipping",
+    ctaHeadline: "Remove the Ceiling. Build the System. Earn All of Kenya.",
+    ctaSub: "One ebook. Supplier list, pricing formula, and marketing system.",
+    ctaBtn: "Get the Ebook — Scale Your Business"
+  },
+  "11": {
+    eyebrow: "For Kenya's International Payment Users",
+    hook: "4% Conversion Fee.<br/>Every. Single. Time.<br/><span class='highlight-gold'>There's a Better Way.</span>",
+    sub: "P2P crypto traders convert USDT to M-Pesa at 0.1% fees with same-day settlement — and turn the same skill into a monthly income stream.",
+    problem: "You're receiving payments from abroad, or sending money, and every transaction costs you 3–4% in fees plus 1–3 days in waiting. Binance P2P with M-Pesa does the same job at 0.1% within minutes. And once you know the system, you can also trade for profit — making money on the spread while solving your own conversion problem.",
+    solutionTitle: "P2P Crypto — Save on Fees, Earn on Spreads",
+    solutionSub: "The ebook teaches the full Binance P2P setup for Kenyan users — from first USDT purchase to consistent trading income.",
+    incomeRange: "KES 15,000 – KES 80,000+/month",
+    cardTitle: "0.1% Fees. Same-Day M-Pesa. And a Side Income.",
+    cardBody: "The ebook walks you through Binance KYC for Kenyan accounts, M-Pesa payment method setup, how to buy and sell USDT at profitable spreads, and a full scam-prevention checklist. It also covers how to build your merchant reputation to access higher-volume trades faster.",
+    bullets: [
+      "Binance KYC setup for Kenyan national ID — step by step",
+      "How to link M-Pesa correctly and avoid account freeze issues",
+      "Spread strategy: realistic targets based on starting capital",
+      "Scam-prevention checklist including fake M-Pesa confirmation protection"
+    ],
+    activeStream: "P2P Crypto",
+    ctaHeadline: "Stop Losing 4% on Every Transfer. Start Earning on the Spread.",
+    ctaSub: "One ebook. The full Binance P2P + M-Pesa system for Kenya.",
+    ctaBtn: "Get the Ebook — Cut Your Fees"
+  },
+  "12": {
+    eyebrow: "For Kenya's Aspiring Founders",
+    hook: "You Don't Want a Job.<br/>You Want to Own<br/><span class='highlight-pink'>Something That Scales.</span>",
+    sub: "The digital agency model: hire 5 chat operators, bill clients at $1,000/operator/month, earn the margin. The ebook covers the full blueprint.",
+    problem: "You've managed people. You understand systems. You know how to get things done through others. What you don't have is the digital income vehicle to plug those skills into. The chat operations agency model is that vehicle — and it's one of the few business models in Kenya's digital economy where management skill is the competitive advantage.",
+    solutionTitle: "Chat Ops Agency — The Scalable Business Model",
+    solutionSub: "The ebook teaches the full progression: solo operator to team manager to agency owner — with pricing, SOPs, and client acquisition.",
+    incomeRange: "KES 150,000 – KES 400,000+/month",
+    cardTitle: "From Freelancer to Agency: The Blueprint",
+    cardBody: "The ebook covers the agency structure for a 3–5 person chat operations team, how to build Standard Operating Procedures that anyone can follow, how to hire from Kenyan university campuses at the right rates, and how to pitch agency-level clients at $2,000–$5,000/month retainers.",
+    bullets: [
+      "Minimum viable agency structure: Director, Ops Lead, 2-3 Specialists",
+      "Compensation models for hired operators (task-based vs monthly)",
+      "LinkedIn positioning to attract agency-level clients",
+      "SOP templates for chat operations that new hires can follow from day one"
+    ],
+    activeStream: "Chat Ops",
+    ctaHeadline: "Build the Agency. The Ebook Has the Blueprint.",
+    ctaSub: "One purchase. The full agency model — hiring, pricing, and client acquisition.",
+    ctaBtn: "Get the Ebook — Build Your Agency"
+  }
+};
+
+/* Fallback persona alias map */
+const ALIASES = {
+  "ai_training": "01", "ai": "01",
+  "academic_writing": "02", "academic": "02", "writing": "02",
+  "copywriting": "03", "copy": "03",
+  "crypto": "04", "p2p": "04", "p2p_crypto": "04",
+  "dropshipping": "05", "ecommerce": "05",
+  "graduate": "01", "student": "08",
+  "creator": "03", "freelancer": "09",
+  "business": "10", "seller": "10",
+  "remittance": "11", "payments": "11",
+  "agency": "12", "founder": "12",
+  "chat": "07", "chat_ops": "07",
+  "education": "06", "nursing": "06"
+};
+
+const ALL_STREAMS = [
+  { key: "AI Training",        icon: "🤖", earn: "$300–$1,700/mo",  id: "01" },
+  { key: "Academic Writing",   icon: "📝", earn: "$300–$1,200/mo",  id: "02" },
+  { key: "Copywriting",        icon: "✍️", earn: "$300–$1,700/mo",  id: "03" },
+  { key: "P2P Crypto",         icon: "₿",  earn: "$300–$2,000/mo",  id: "04" },
+  { key: "Dropshipping",       icon: "📦", earn: "$400–$3,000/mo",  id: "05" },
+  { key: "Chat Ops",           icon: "💬", earn: "$300–$1,000/mo",  id: "07" }
+];
+
+/* =============================================
+   READ URL PARAMS
+   ============================================= */
+function getPersona() {
+  const params = new URLSearchParams(window.location.search);
+  let p = params.get('persona') || params.get('icp') || params.get('p') || '';
+  p = p.toLowerCase().trim();
+
+  /* direct match */
+  if (PERSONAS[p]) return p;
+
+  /* alias match */
+  if (ALIASES[p]) return ALIASES[p];
+
+  /* BeMob / tracker pass-through: persona might be in utm_content or sub1 */
+  const utm = params.get('utm_content') || params.get('sub1') || '';
+  const u = utm.toLowerCase().trim();
+  if (PERSONAS[u]) return u;
+  if (ALIASES[u]) return ALIASES[u];
+
+  /* default to persona 01 */
+  return '01';
+}
+
+/* =============================================
+   RENDER PAGE
+   ============================================= */
+function render() {
+  const key = getPersona();
+  const d = PERSONAS[key];
+  if (!d) return;
+
+  document.getElementById('eyebrow').textContent = d.eyebrow;
+  document.getElementById('hero-hook').innerHTML = d.hook;
+  document.getElementById('hero-sub').textContent = d.sub;
+  document.getElementById('problem-text').textContent = d.problem;
+  document.getElementById('solution-title').textContent = d.solutionTitle;
+  document.getElementById('solution-sub').textContent = d.solutionSub;
+  document.getElementById('income-range').textContent = d.incomeRange;
+  document.getElementById('solution-card-title').textContent = d.cardTitle;
+  document.getElementById('solution-card-body').textContent = d.cardBody;
+  document.getElementById('cta-headline').textContent = d.ctaHeadline;
+  document.getElementById('cta-sub').textContent = d.ctaSub;
+  document.getElementById('cta-btn-text').textContent = d.ctaBtn;
+  document.title = d.eyebrow + ' — Digital Dollars Kenya';
+
+  /* Proof bullets */
+  const ul = document.getElementById('proof-list');
+  ul.innerHTML = d.bullets.map(b => `<li>${b}</li>`).join('');
+
+  /* Streams grid */
+  const grid = document.getElementById('streams-grid');
+  grid.innerHTML = ALL_STREAMS.map(s => `
+    <div class="stream-chip ${s.key === d.activeStream ? 'active-stream' : ''}">
+      <span class="chip-icon">${s.icon}</span>
+      <div class="chip-name">${s.key}</div>
+      <div class="chip-earn">${s.earn}</div>
+    </div>
+  `).join('');
+
+  /* Fire ViewContent pixel event */
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'ViewContent', {
+      content_name: 'Digital Dollars Kenya Ebook',
+      content_category: d.activeStream,
+      persona: key
+    });
+  }
+}
+
+/* =============================================
+   CTA CLICK TRACKING
+   ============================================= */
+function trackCTA() {
+  const key = getPersona();
+  const d = PERSONAS[key] || {};
+
+  /* Meta pixel InitiateCheckout */
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'InitiateCheckout', {
+      content_name: 'Digital Dollars Kenya Ebook',
+      content_category: d.activeStream || 'General',
+      persona: key
+    });
+  }
+
+  /* BeMob / tracker click event — fires on CTA click */
+  /* BeMob appends click ID via URL; the tracker link should be your campaign URL */
+  /* The CTA href already points to Hustlesasa — BeMob tracks the click server-side */
+}
+
+/* Init */
+render();
+</script>
+</body>
+</html>
