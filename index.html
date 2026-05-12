@@ -1013,7 +1013,9 @@ const ALL_STREAMS = [
    ============================================= */
 function getPersona() {
   const params = new URLSearchParams(window.location.search);
-  let p = params.get('persona') || params.get('icp') || params.get('p') || '';
+
+  /* Check all possible parameter names — persona, custom1 (BeMob), icp, p */
+  let p = params.get('custom1') || params.get('persona') || params.get('icp') || params.get('p') || '';
   p = p.toLowerCase().trim();
 
   /* direct match */
@@ -1022,7 +1024,7 @@ function getPersona() {
   /* alias match */
   if (ALIASES[p]) return ALIASES[p];
 
-  /* BeMob / tracker pass-through: persona might be in utm_content or sub1 */
+  /* fallback: utm_content or sub1 */
   const utm = params.get('utm_content') || params.get('sub1') || '';
   const u = utm.toLowerCase().trim();
   if (PERSONAS[u]) return u;
